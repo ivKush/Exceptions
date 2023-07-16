@@ -13,7 +13,6 @@ public class task4 {
         el = scan.nextLine();
         emptyString(el);
         scan.close();
-
     }
 
     private static String emptyString(String arg) throws Exception {
@@ -21,5 +20,4 @@ public class task4 {
             throw new Exception("Пустые строки вводить нельзя");
         return arg;
     }
-
 }

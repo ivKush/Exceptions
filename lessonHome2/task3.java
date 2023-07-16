@@ -2,6 +2,8 @@ package lessonHome2;
 
 import java.io.FileNotFoundException;
 
+// Исправить код
+
 // public static void main(String[] args) throws Exception {
 //     try {
 //         int a = 90;
