@@ -2,7 +2,7 @@ package lessonHome3;
 
 import java.util.Scanner;
 
-public class createHuman extends Human {
+public class CreateHuman extends Human {
     
     public void inData() {
         
@@ -11,6 +11,7 @@ public class createHuman extends Human {
         // String[] human = scan.nextLine().split(" ");
         sethuman(scan.nextLine().split(" "));
         scan.close();
+        
         // return gethuman();
     }
     

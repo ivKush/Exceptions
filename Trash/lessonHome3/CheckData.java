@@ -16,9 +16,13 @@ public class CheckData extends Human {
     }
 
     public void checkUserData() {
+        
         try {
+            System.out.println(gethuman().toString());
+            System.out.println(human.toString());
             DateFormat df = new SimpleDateFormat("dd.mm.yyyy");
             Date date = df.parse(human[3]);
+            System.out.println(human[4]);
             if (human[4].length() != 11) throw new RuntimeException("Телефон указан не верно");
             if (human[5] != "f" || human[5] != "m") throw new RuntimeException("Пол указан не верно");
         } catch (ParseException e) {

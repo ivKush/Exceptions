@@ -1,7 +1,5 @@
 package lessonHome3;
 
-import java.io.IOException;
-
 /*
 // Напишите приложение, которое будет запрашивать у пользователя следующие данные в произвольном порядке,
 // разделенные пробелом: Фамилия Имя Отчество, дата_рождения, номер_телефона, пол
@@ -20,24 +18,24 @@ import java.io.IOException;
  */
 
 public class Main {
-    public static void main(String[] args) {
-        
-        // Иванов Иван Иванович 01.01.2023 89184545455 m
 
-        Func metod = new Func();
-        String[] dataHuman = metod.inData();
+    // Иванов Иван Иванович 01.01.2023 89184545455 m
+    
+    public static void main(String[] args) {
+
+        CreateHuman human = new CreateHuman();
+        human.inData();
+        CheckData data = new CheckData();
 
         try {
-            if (metod.checkLenths(dataHuman) == -1)
+            if (data.checkLenths(human.gethuman()) == -1)
                 throw new RuntimeException("Введенных данных меньше, чем требуется");
-            if (metod.checkLenths(dataHuman) == 1)
+            if (data.checkLenths(human.gethuman()) == 1)
                 throw new RuntimeException("Введенных данных больше, чем требуется");
-            metod.checkUserData(dataHuman);
-            metod.recHuman(dataHuman);
+            data.checkUserData();
+
         } catch (RuntimeException e) {
             e.getMessage();
-        } catch (IOException e) {
-            System.out.println("Ошибка записи в файл");
         }
     }
 }
