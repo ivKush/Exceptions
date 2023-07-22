@@ -35,7 +35,7 @@ public class Func {
             DateFormat df = new SimpleDateFormat("dd.mm.yyyy");
             Date date = df.parse(arg[3]);
             if (arg[4].length() != 11) throw new RuntimeException("Телефон указан не верно");
-            if (arg[5].equals("f") || arg[5].equals("m")) throw new RuntimeException("Пол указан не верно");
+            if (!(arg[5].equals("f")) || !(arg[5].equals("m"))) throw new RuntimeException("Пол указан не верно");
         } catch (ParseException e) {
             System.out.println("Проверьте формат даты");
         } catch (RuntimeException e) {
@@ -48,7 +48,7 @@ public class Func {
 
     public void recHuman(String[] arg) throws IOException {
         // byte[] nameFile = arg[0].getBytes();
-        try (FileOutputStream file = new FileOutputStream("lesson_home3\\" + arg[0].getBytes()  + ".txt")) {
+        try (FileOutputStream file = new FileOutputStream("lesson_home3\\" + arg[0]  + ".txt")) {
             for (String el : arg) {
                 byte[] value = el.getBytes();
                 file.write(value, 0, value.length);
